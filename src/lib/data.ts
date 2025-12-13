@@ -4,7 +4,7 @@ export const personalInfo = {
   email: "salunkeshubham801@gmail.com",
   github: "https://github.com/Shubham-Salunke-26",
   linkedin: "https://linkedin.com/in/shubham-salunke-devops/",
-  profilePicture: "/profile.jpg",
+  profilePicture: "/Shubhams-portfolio/profile.jpg",
   heroDescription:
     "Results-driven DevOps Engineer Enthusiast with expertise in CI/CD automation, infrastructure as code, and cloud technologies. Skilled in implementing secure, scalable solutions using AWS, Kubernetes, and container technologies.",
 };
