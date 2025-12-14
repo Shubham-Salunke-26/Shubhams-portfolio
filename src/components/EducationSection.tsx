@@ -3,6 +3,8 @@ import TimelineItem from "./TimelineItem";
 import { Award } from "lucide-react";
 import MotionWrapper from "./MotionWrapper";
 import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGraduationCap, faUniversity, faCalendar, faMapMarkerAlt, faStar } from "@fortawesome/free-solid-svg-icons";
 
 export default function EducationSection() {
   return (
@@ -12,8 +14,9 @@ export default function EducationSection() {
     >
       <div className="container max-w-4xl mx-auto px-6 md:px-4">
         <MotionWrapper>
-          <h2 className="text-2xl font-bold mb-8 text-center md:text-left">
-            🎓 Education
+          <h2 className="text-2xl font-bold mb-8 text-center md:text-left flex items-center gap-2 justify-center md:justify-start">
+            <FontAwesomeIcon icon={faGraduationCap} className="text-purple-500" />
+            Education
           </h2>
         </MotionWrapper>
 
@@ -21,14 +24,30 @@ export default function EducationSection() {
           {education.map((edu, index) => (
             <TimelineItem
               key={edu.institution}
-              title={`🎓 ${edu.degree}`}
-              subtitle={`🏛️ ${edu.institution}`}
-              date={`📅 ${edu.period}`}
+              title={
+                <span className="flex items-center gap-2">
+                  <FontAwesomeIcon icon={faGraduationCap} className="text-purple-500" />
+                  {edu.degree}
+                </span>
+              }
+              subtitle={
+                <span className="flex items-center gap-2">
+                  <FontAwesomeIcon icon={faUniversity} className="text-purple-500" />
+                  {edu.institution}
+                </span>
+              }
+              date={
+                <span className="flex items-center gap-2">
+                  <FontAwesomeIcon icon={faCalendar} className="text-purple-500" />
+                  {edu.period}
+                </span>
+              }
               isLast={index === education.length - 1}
               index={index}
             >
-              <p className="text-sm text-muted-foreground mb-3">
-                📍 {edu.location}
+              <p className="text-sm text-muted-foreground mb-3 flex items-center gap-2">
+                <FontAwesomeIcon icon={faMapMarkerAlt} className="text-purple-500" />
+                {edu.location}
               </p>
 
               {edu.achievements && edu.achievements.length > 0 && (
@@ -43,8 +62,9 @@ export default function EducationSection() {
                     <div className="h-6 w-6 flex items-center justify-center rounded-full bg-purple-500/10 mr-2">
                       <Award className="h-4 w-4 text-purple-500" />
                     </div>
-                    <h4 className="text-sm font-medium">
-                      ✨ Achievements & Activities
+                    <h4 className="text-sm font-medium flex items-center gap-2">
+                      <FontAwesomeIcon icon={faStar} className="text-purple-500" />
+                      Achievements & Activities
                     </h4>
                   </div>
                   <ul className="list-none ml-4 space-y-2 text-sm">

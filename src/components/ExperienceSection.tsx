@@ -3,6 +3,8 @@ import TimelineItem from "./TimelineItem";
 import { Briefcase } from "lucide-react";
 import { motion } from "framer-motion";
 import MotionWrapper from "./MotionWrapper";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBriefcase, faLaptopCode, faMapMarkerAlt, faCalendar } from "@fortawesome/free-solid-svg-icons";
 
 export default function ExperienceSection() {
   return (
@@ -20,7 +22,7 @@ export default function ExperienceSection() {
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              💼
+              <FontAwesomeIcon icon={faBriefcase} className="text-purple-500" />
             </motion.span>{" "}
             Work Experience
           </h2>
@@ -29,9 +31,24 @@ export default function ExperienceSection() {
           {workExperience.map((job, index) => (
             <TimelineItem
               key={job.company + job.period}
-              title={`👨‍💻 ${job.position} | ${job.company}`}
-              subtitle={`🌍 ${job.location}`}
-              date={`📅 ${job.period}`}
+              title={
+                <span className="flex items-center gap-2">
+                  <FontAwesomeIcon icon={faLaptopCode} className="text-purple-500" />
+                  {job.position} | {job.company}
+                </span>
+              }
+              subtitle={
+                <span className="flex items-center gap-2">
+                  <FontAwesomeIcon icon={faMapMarkerAlt} className="text-purple-500" />
+                  {job.location}
+                </span>
+              }
+              date={
+                <span className="flex items-center gap-2">
+                  <FontAwesomeIcon icon={faCalendar} className="text-purple-500" />
+                  {job.period}
+                </span>
+              }
               isLast={index === workExperience.length - 1}
               index={index}
             >

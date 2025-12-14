@@ -11,14 +11,18 @@ import { Github } from "lucide-react";
 import { GlassCard } from "./ui/glass-card";
 import MotionWrapper from "./MotionWrapper";
 import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRocket, faLink } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 export default function ProjectsSection() {
   return (
     <section id="projects" className="py-12 relative">
       <div className="container max-w-4xl mx-auto px-6 md:px-4">
         <MotionWrapper>
-          <h2 className="text-2xl font-bold mb-8 text-center md:text-left">
-            🚀 Projects
+          <h2 className="text-2xl font-bold mb-8 text-center md:text-left flex items-center gap-2 justify-center md:justify-start">
+            <FontAwesomeIcon icon={faRocket} className="text-purple-500" />
+            Projects
           </h2>
         </MotionWrapper>
 
@@ -56,8 +60,9 @@ export default function ProjectsSection() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <Github className="h-4 w-4 mr-2 group-hover/link:rotate-12 transition-transform duration-300" />
-                    View on GitHub 🔗
+                    <FontAwesomeIcon icon={faGithub} className="mr-2 group-hover/link:rotate-12 transition-transform duration-300" />
+                    View on GitHub
+                    <FontAwesomeIcon icon={faLink} className="ml-2" />
                   </motion.a>
                 </CardFooter>
               </GlassCard>

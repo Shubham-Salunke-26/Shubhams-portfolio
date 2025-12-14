@@ -2,6 +2,9 @@ import { personalInfo } from "@/lib/data";
 import { Mail, Github, MapPin, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
 import MotionWrapper from "./MotionWrapper";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLaptopCode, faMapMarkerAlt, faEnvelope, faLink, faStar } from "@fortawesome/free-solid-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 export default function HeroSection() {
   const containerVariants = {
@@ -37,18 +40,19 @@ export default function HeroSection() {
         >
           <div className="text-center md:text-left">
             <motion.h1
-              className="text-4xl font-bold mb-2"
+              className="text-4xl font-bold mb-2 flex items-center gap-3 justify-center md:justify-start"
               variants={childVariants}
             >
-              {personalInfo.name}{" "}
-              <span className="inline-block animate-pulse">✨</span>
+              {personalInfo.name}
+              <FontAwesomeIcon icon={faStar} className="text-purple-500 animate-pulse" />
             </motion.h1>
 
             <motion.p
-              className="text-xl text-muted-foreground mb-6"
+              className="text-xl text-muted-foreground mb-6 flex items-center gap-2 justify-center md:justify-start"
               variants={childVariants}
             >
-              DevOps Engineer 👨‍💻
+              DevOps Engineer
+              <FontAwesomeIcon icon={faLaptopCode} className="text-purple-500" />
             </motion.p>
 
             <motion.div
@@ -56,46 +60,46 @@ export default function HeroSection() {
               variants={containerVariants}
             >
               <motion.div
-                className="flex items-center text-sm text-muted-foreground"
+                className="flex items-center text-sm text-muted-foreground gap-2"
                 variants={childVariants}
                 whileHover={{ scale: 1.05, color: "#4b5563" }}
               >
-                <MapPin className="h-4 w-4 mr-2" />
-                📍 {personalInfo.location}
+                <FontAwesomeIcon icon={faMapMarkerAlt} className="text-purple-500" />
+                {personalInfo.location}
               </motion.div>
 
               <motion.a
                 href={`mailto:${personalInfo.email}`}
-                className="flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors gap-2"
                 variants={childVariants}
                 whileHover={{ scale: 1.05, color: "#4b5563" }}
               >
-                <Mail className="h-4 w-4 mr-2" />
-                ✉️ {personalInfo.email}
+                <FontAwesomeIcon icon={faEnvelope} className="text-purple-500" />
+                {personalInfo.email}
               </motion.a>
 
               <motion.a
                 href={personalInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors gap-2"
                 variants={childVariants}
                 whileHover={{ scale: 1.05, color: "#4b5563" }}
               >
-                <Github className="h-4 w-4 mr-2" />
-                🌟 GitHub
+                <FontAwesomeIcon icon={faGithub} className="text-purple-500" />
+                GitHub
               </motion.a>
 
               <motion.a
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors gap-2"
                 variants={childVariants}
                 whileHover={{ scale: 1.05, color: "#4b5563" }}
               >
-                <Linkedin className="h-4 w-4 mr-2" />
-                🔗 LinkedIn
+                <FontAwesomeIcon icon={faLinkedin} className="text-purple-500" />
+                LinkedIn
               </motion.a>
             </motion.div>
           </div>
