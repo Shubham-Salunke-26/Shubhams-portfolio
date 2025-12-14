@@ -1,5 +1,7 @@
 import { personalInfo } from "@/lib/data";
 import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar, faLaptopCode, faHeart } from "@fortawesome/free-solid-svg-icons";
 
 export default function Footer() {
   return (
@@ -17,7 +19,8 @@ export default function Footer() {
             whileHover={{ scale: 1.01 }}
           >
             &copy; {new Date().getFullYear()} {personalInfo.name}. All rights
-            reserved. ✨
+            reserved.
+            <FontAwesomeIcon icon={faStar} className="ml-1 text-purple-500" />
           </motion.p>
           <motion.p
             className="text-sm text-muted-foreground mt-2 md:mt-0 text-center md:text-left"
@@ -34,7 +37,7 @@ export default function Footer() {
               whileHover={{ rotate: 360 }}
               transition={{ duration: 0.5 }}
             >
-              💻
+              <FontAwesomeIcon icon={faLaptopCode} className="text-purple-500" />
             </motion.span>{" "}
             and{" "}
             <motion.span
@@ -48,7 +51,7 @@ export default function Footer() {
                 duration: 1.5,
               }}
             >
-              ❤️
+              <FontAwesomeIcon icon={faHeart} className="text-red-500" />
             </motion.span>
           </motion.p>
         </motion.div>
