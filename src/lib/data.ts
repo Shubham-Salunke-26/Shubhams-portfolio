@@ -76,7 +76,7 @@ export const skills = {
 export const projects = [
   {
     title: "Automated CI/CD Pipeline",
-    github: "https://github.com/Shubham-Salunke-26/ci-cd-pipeline",
+    github: "https://github.com/Shubham-Salunke-26/Jenkins-CI-CD-Project-Todo-node-app",
     description: [
       "Designed and implemented a complete CI/CD pipeline using Jenkins and GitHub.",
       "Automated testing and deployment of a microservices application to a Kubernetes cluster.",
@@ -84,8 +84,8 @@ export const projects = [
     ],
   },
   {
-    title: "Kubernetes Cluster on AWS",
-    github: "https://github.com/Shubham-Salunke-26/k8s-aws-terraform",
+    title: "E-Commerce App",
+    github: "https://github.com/Shubham-Salunke-26/E-Commerce-App",
     description: [
       "Provisioned a highly available Kubernetes cluster on AWS EKS using Terraform.",
       "Configured auto-scaling groups and load balancers for optimal performance.",
